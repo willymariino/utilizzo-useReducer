@@ -41,4 +41,63 @@ function TasksReducer(tasks, action) {
 
 }
 
-export default TasksReducer
+function App() {
+
+  const [text, setText] = useState("");
+
+  const initialTask = [
+
+    {
+      text: "fare la spesa",
+      completed: false
+    },
+
+    {
+      text: "fare il bucato",
+      completed: false
+    }
+
+  ];
+
+  const [tasks, dispatchTasks] = useReducer(tasksReducer, initialTasks);
+
+  return (
+    <>
+      <h1>Lista di cose da fare</h1>
+
+      <input
+        type="text"
+        placeholder='Aggiungi Task'
+        value={text}
+        onChange={e => setText(e.target.value)}
+      />
+
+      <button onClick={() => dispatchTasks({ type: "ADD_TASK", payload: text })}>
+        aggiungi Task
+      </button>
+
+      <ul>
+        {tasks.map((task, i) => (
+
+          <li key={i}>
+
+            <p onClick={() => toggleTask(i)}>
+              {task.completed ? <s>{task.text}</s> : task.text}
+            </p>
+
+
+
+            <button onClick={() => deleteTask(i)}> Elimina </button>,
+            <button onClick={() => cloneTask(i)}> Duplica </button>
+
+          </li>
+        ))}
+
+      </ul>
+
+    </>
+  )
+
+}
+
+export default { TasksReducer, App }
