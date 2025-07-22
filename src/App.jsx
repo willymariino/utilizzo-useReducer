@@ -59,7 +59,7 @@ function App() {
 
   ];
 
-  const [tasks, dispatchTasks] = useReducer(tasksReducer, initialTasks);
+  const [tasks, dispatchTasks] = useReducer(TasksReducer, initialTask);
 
   return (
     <>
@@ -100,4 +100,4 @@ function App() {
 
 }
 
-export default { TasksReducer, App }
+export { App, TasksReducer }
