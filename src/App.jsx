@@ -74,7 +74,10 @@ function App() {
         onChange={e => setText(e.target.value)}
       />
 
-      <button onClick={() => dispatchTasks({ type: "ADD_TASK", payload: text })}>
+      <button onClick={() => {
+        dispatchTasks({ type: "ADD_TASK", payload: text })
+        setText("")
+      }}>
         aggiungi Task
       </button>
 
