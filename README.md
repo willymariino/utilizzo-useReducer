@@ -11,4 +11,4 @@ This project demonstrates how to use React's `useReducer` hook to manage complex
 
 ## Live Demo
 
-[to-do-list-con-usereducer](https://to-do-list-con-usereducer.netlify.app/)
+[to-do-list-con-useReducer](https://to-do-list-con-usereducer.netlify.app/)
