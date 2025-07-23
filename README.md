@@ -1,12 +1,14 @@
-# React + Vite
+# To-Do List with useReducer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates how to use React's `useReducer` hook to manage complex state in a to-do list application. Instead of handling state updates with multiple separate functions, all logic for adding, toggling, deleting, and cloning tasks is centralized in a reducer function. This approach makes state management more predictable and easier to maintain as your application grows.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add new tasks
+- Toggle task completion
+- Delete tasks
+- Clone tasks
 
-## Expanding the ESLint configuration
+## Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+[to-do-list-con-usereducer](https://to-do-list-con-usereducer.netlify.app/)
