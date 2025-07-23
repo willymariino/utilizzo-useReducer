@@ -82,18 +82,18 @@ function App() {
       </button>
 
       <ul>
-        {tasks.map((task, i) => (
+        {tasks.map((task, index) => (
 
-          <li key={i}>
+          <li key={index}>
 
-            <p onClick={() => dispatchTasks({ type: "TOGGLE_TASK", payload: i })}>
+            <p onClick={() => dispatchTasks({ type: "TOGGLE_TASK", payload: index })}>
               {task.completed ? <s>{task.text}</s> : task.text}
             </p>
 
 
 
-            <button onClick={() => dispatchTasks({ type: "DELETE_TASK", payload: i })}> Elimina </button>,
-            <button onClick={() => dispatchTasks({ type: "CLONE_TASK", payload: i })}> Duplica </button>
+            <button onClick={() => dispatchTasks({ type: "DELETE_TASK", payload: index })}> Elimina </button>
+            <button onClick={() => dispatchTasks({ type: "CLONE_TASK", payload: index })}> Duplica </button>
 
           </li>
         ))}
