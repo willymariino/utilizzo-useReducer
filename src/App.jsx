@@ -10,8 +10,9 @@ function TasksReducer(tasks, action) {
       const taskToAdd = {
         text: action.payload.trim(),
         completed: false
-      };
+      }
       return [...tasks, taskToAdd];
+
 
     case "TOGGLE_TASK":
       return tasks.map((task, index) => {
@@ -29,7 +30,7 @@ function TasksReducer(tasks, action) {
 
     case "CLONE_TASK":
       const taskToClone = tasks[action.payload]
-      return [...task, taskClone]
+      return [...tasks, taskToClone]
 
     default:
       return tasks;
@@ -81,14 +82,14 @@ function App() {
 
           <li key={i}>
 
-            <p onClick={() => toggleTask(i)}>
+            <p onClick={() => dispatchTasks({ type: "TOGGLE_TASK", payload: i })}>
               {task.completed ? <s>{task.text}</s> : task.text}
             </p>
 
 
 
-            <button onClick={() => deleteTask(i)}> Elimina </button>,
-            <button onClick={() => cloneTask(i)}> Duplica </button>
+            <button onClick={() => dispatchTasks({ type: "DELETE_TASK", payload: i })}> Elimina </button>,
+            <button onClick={() => dispatchTasks({ type: "CLONE_TASK", payload: i })}> Duplica </button>
 
           </li>
         ))}
