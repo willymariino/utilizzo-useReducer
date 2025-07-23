@@ -5,14 +5,14 @@ import { useState, useReducer } from 'react'
 function TasksReducer(tasks, action) {
   switch (action.type) {
 
-    case "ADD_TASK":
+    case "ADD_TASK": {
       if (!action.payload.trim()) return tasks;
       const taskToAdd = {
         text: action.payload.trim(),
         completed: false
       }
       return [...tasks, taskToAdd];
-
+    }
 
     case "TOGGLE_TASK":
       return tasks.map((task, index) => {
@@ -28,9 +28,10 @@ function TasksReducer(tasks, action) {
 
       })
 
-    case "CLONE_TASK":
+    case "CLONE_TASK": {
       const taskToClone = tasks[action.payload]
       return [...tasks, taskToClone]
+    }
 
     default:
       return tasks;
